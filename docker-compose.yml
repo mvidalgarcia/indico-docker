@@ -12,10 +12,11 @@ services:
       - indico-redis
     environment:
       - BASEURL=http://localhost:8080
-      - PGHOST=indico-postgres
-      - PGUSER=indico
-      - PGPASSWORD=indicopass
-      - PGDATABASE=indico
+      - PGHOST=indico-postgres # Adapt in case of using external DB
+      - PGUSER=indico # Adapt in case of using external DB
+      - PGPASSWORD=indicopass # Adapt in case of using external DB
+      - PGDATABASE=indico # Adapt in case of using external DB
+      - PGPORT=5432 # Adapt in case of using external DB
       - SMTP_SERVER=localhost
       - SMTP_PORT=8025
       - SMTP_LOGIN
