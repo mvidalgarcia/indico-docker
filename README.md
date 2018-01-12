@@ -1,5 +1,7 @@
 # indico-docker
 
+**Under development, not ready for production.**
+
 Simple Docker config to try Indico out.
 
 ```sh
