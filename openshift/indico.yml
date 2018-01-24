@@ -324,14 +324,13 @@ objects:
           - mountPath: /opt/indico/custom
             name: customization
           readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
-              scheme: HTTP
-            timeoutSeconds: 1
+            exec:
+              command:
+                - /opt/indico/health.sh
+            failureThreshold: 3
             periodSeconds: 10
             successThreshold: 1
-            failureThreshold: 3
+            timeoutSeconds: 1
         restartPolicy: Always
         volumes:
         - name: indico-web-claim0
