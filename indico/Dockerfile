@@ -9,8 +9,8 @@ RUN apt update
 RUN apt install -y postgresql
 RUN bash -c 'mkdir -p /opt/indico/{etc,tmp,log,assets,cache,archive,static}'
 
-COPY run_indico.sh run_celery.sh /opt/indico/
-RUN chmod 755 /opt/indico/run_*.sh
+COPY run_indico.sh run_celery.sh health.sh /opt/indico/
+RUN chmod 755 /opt/indico/*.sh
 
 RUN virtualenv /opt/indico/.venv
 
